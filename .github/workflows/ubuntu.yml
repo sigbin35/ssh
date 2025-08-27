@@ -36,7 +36,6 @@ jobs:
         ssh_key: ${{ secrets.SSH_KEY }}
         key_file: id_ecdsa
     - uses: actions/checkout@v5
-    - run: source ubuntu-run.sh
     - name: Setup tmate session
       timeout-minutes: 340
       continue-on-error: true
