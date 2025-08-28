@@ -39,7 +39,7 @@ jobs:
     - name: Setup tmate session
       timeout-minutes: 340
       continue-on-error: true
-    - uses: mxschmitt/action-tmate@master
+      uses: mxschmitt/action-tmate@master
     - name: Loop Workflow
       continue-on-error: true
       run: |
