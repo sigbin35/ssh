@@ -35,6 +35,15 @@ jobs:
       with:
         ssh_key: ${{ secrets.SSH_KEY }}
         key_file: id_ecdsa
+    - uses: actions/upload-artifact@v5
+      with:
+        name: my-artifact
+        path: build/
+        retention-days: 1 # Retain for 1 day
+    - uses: easimon/maximize-build-space@master
+      with:
+        root-reserve-mb: 500 # Reserve 500MB of space
+        swap-size-mb: 1024 # Allocate 1GB for swap
     - uses: actions/checkout@v5
     - name: Setup tmate session
       timeout-minutes: 340
